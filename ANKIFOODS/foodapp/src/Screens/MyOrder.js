@@ -82,7 +82,9 @@ export default function MyOrder() {
                                         })
 
                                     )
-                                }) : ""
+                                }) : <div style={{marginTop:"130px", textAlign:"center"}}>
+                                <p style={{fontSize:"30px"}}><strong>No Orders Found !</strong> </p>
+                            </div>
                         )
                     }) : ""}
                 </div>
