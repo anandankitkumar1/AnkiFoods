@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Delete from '@material-ui/icons/Delete'
 import { useDispatchCart } from '../Components/ContextReducer';
 import { useNavigate } from "react-router-dom";
+import { myurl } from '../BackendUrl/myurl';
 export default function Cart() {
   var addedCart = JSON.parse(localStorage.getItem("foodCart")) || [];
   // let data = useCart();
@@ -38,7 +39,7 @@ export default function Cart() {
     navigate("/thanksfororder");
     let userEmail = localStorage.getItem("userEmail");
     // console.log(data,localStorage.getItem("userEmail"),new Date())
-    let response = await fetch("http://localhost:5000/api/auth/orderData", {
+    let response = await fetch(`${myurl}/api/auth/orderData`, {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Card from '../Components/Card'
+import Card from '../Components/Card';
+import { myurl } from '../BackendUrl/myurl';
 // import Carousel from '../components/Carousel'
 // import Footer from '../Components/Footer'
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
   const [foodItems, setFoodItems] = useState([])
   const [search, setSearch] = useState('')
   const loadFoodItems = async () => {
-    let response = await fetch("http://localhost:5000/api/auth/foodData", {
+    let response = await fetch(`${myurl}/api/auth/foodData`, {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',
