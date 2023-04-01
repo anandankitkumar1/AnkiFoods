@@ -8,7 +8,8 @@ global.foodData = require('./db')(function call(err, data, CatData) {
 const Food =   require("./models/food.model");
 const Category =   require("./models/category.model");
 const express = require('express')
-const app = express()
+const app = express();
+const cors = require("cors");
 const port = 5000
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
@@ -18,8 +19,8 @@ app.use((req, res, next) => {
   );
   next();
 });
+app.use(cors());
 app.use(express.json())
-
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
