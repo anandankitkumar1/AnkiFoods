@@ -1,1 +1,1 @@
-export const myurl = "http://localhost:5000";
+export const myurl = "https://ankifoodsbackend.onrender.com";
